@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mission to Mars - Scrape</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="Resources/bootstrap.min.css">
+
+    <link rel="stylesheet" href="Resources/my_styles.css">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12 bg-light">
+                <BR /><BR />
+                <div class="jumbotron">
+                    <h1 class="display-3">Congratulations!</h1>
+                    <p class="lead">
+                        You have successfully scraped the following data as of {{ updateTime }}<BR/>
+                        <a role="button" class="btn btn-info" href="/">Visualize Data</a>
+                    </p>
+                    <hr class="my-4">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-12 bg-light">
+                <h2 class="display-4 text-primary">NASA Mars News</h2>
+                <p>
+                    * Scrape the [NASA Mars News Site](https://mars.nasa.gov/news/) and collect the latest News
+                    Title and Paragraph Text. <BR /><BR />Assign the text to variables that you can reference later.
+                </p>
+                <div class="card text-white bg-success mb-3" style="max-width: 80%;">
+                    <div class="card-header">Python</div>
+                    <div class="card-body">
+                        <h4 class="card-title">Example</h4>
+                        <p class="card-text">
+                            news_title = "NASA's Next Mars Mission to Investigate Interior of Red
+                            Planet"<BR />
+
+                            news_p = "Preparation of NASA's next spacecraft to Mars, InSight, has ramped up this
+                            summer, on course for
+                            launch next May from Vandenberg Air Force Base in central California -- the first
+                            interplanetary launch in
+                            history from America's West Coast."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-12 bg-light">
+
+                <BR /><BR />
+
+                <h2 class="display-4 text-primary">JPL Mars Space Images - Featured Image</h2>
+                <p>
+                    * Visit the url for JPL Featured Space Image
+                    [here](https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars).<BR /><BR />
+
+                    * Use splinter to navigate the site and find the image url for the current Featured Mars Image
+                    and assign the url string to a variable called `featured_image_url`.<BR /><BR />
+
+                    * Make sure to find the image url to the full size `.jpg` image.<BR /><BR />
+
+                    * Make sure to save a complete url string for this image.<BR />
+                </p>
+                <div class="card text-white bg-success mb-3" style="max-width: 80%;">
+                    <div class="card-header">Python</div>
+                    <div class="card-body">
+                        <h4 class="card-title">Example</h4>
+                        <p class="card-text">
+                            featured_image_url =
+                            'https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA16225_hires.jpg'
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-xl-12 bg-light">
+
+                <BR /><BR />
+
+                <h2 class="display-4 text-primary">Mars Weather</h2>
+                <p>
+                    * Visit the Mars Weather twitter account [here](https://twitter.com/marswxreport?lang=en) and scrape
+                    the latest Mars weather tweet from the page. Save the tweet text for the weather report as a
+                    variable called `mars_weather`.<BR />
+                </p>
+                <div class="card text-white bg-success mb-3" style="max-width: 80%;">
+                    <div class="card-header">Python</div>
+                    <div class="card-body">
+                        <h4 class="card-title">Example</h4>
+                        <p class="card-text">
+                            mars_weather = 'Sol 1801 (Aug 30, 2017), Sunny, high -21C/-5F, low -80C/-112F, pressure at
+                            8.82 hPa, daylight 06:09-17:55'
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-12 bg-light">
+
+                <BR /><BR />
+
+                <h2 class="display-4 text-primary">Mars Facts</h2>
+                <p>
+                    * Visit the Mars Facts webpage [here](https://space-facts.com/mars/) and use Pandas to scrape the
+                    table containing facts about the planet including Diameter, Mass, etc.<BR /><BR />
+
+                    * Use Pandas to convert the data to a HTML table string.<BR />
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-12 bg-light">
+
+                <BR /><BR />
+
+                <h2 class="display-4 text-primary">Mars Hemispheres</h2>
+                <p>
+                    * Visit the USGS Astrogeology site
+                    [here](https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars) to
+                    obtain high resolution images for each of Mar's hemispheres.<BR /><BR />
+
+                    * You will need to click each of the links to the hemispheres in order to find the image url to the
+                    full resolution image.<BR /><BR />
+
+                    * Save both the image url string for the full resolution hemisphere image, and the Hemisphere title
+                    containing the hemisphere name. Use a Python dictionary to store the data using the keys `img_url`
+                    and `title`.<BR /><BR />
+
+                    * Append the dictionary with the image url string and the hemisphere title to a list. This list will
+                    contain one dictionary for each hemisphere.<BR />
+                </p>
+                <div class="card text-white bg-success mb-3" style="max-width: 80%;">
+                    <div class="card-header">Python</div>
+                    <div class="card-body">
+                        <h4 class="card-title">Example</h4>
+                        <p class="card-text">
+                            hemisphere_image_urls = [<BR /><BR />
+                            <span class="tab">
+                                {"title": "Valles Marineris Hemisphere", "img_url": "..."},<BR /><BR />
+                            </span>
+                            <span class="tab">
+                                {"title": "Cerberus Hemisphere", "img_url": "..."},<BR /><BR />
+                            </span>
+                            <span class="tab">
+                                {"title": "Schiaparelli Hemisphere", "img_url": "..."},<BR /><BR />
+                            </span>
+                            <span class="tab">
+                                {"title": "Syrtis Major Hemisphere", "img_url": "..."}<BR /><BR />
+                            </span>
+                            
+                            ]
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="page-footer font-small text-white bg-primary pt-4">
+        <div class="footer-copyright text-center py-2">© 2020 Copyright: Pharaoh Inc.
+        </div>
+    </footer>
+</body>
+
+</html>

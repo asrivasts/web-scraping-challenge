@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mission to Mars</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="Resources/bootstrap.min.css">
+
+    <link rel="stylesheet" href="Resources/my_styles.css">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div class="jumbotron">
+        <center>
+            <h1 class="display-1">Mission to Mars</h1>
+            <a role="button" class="btn btn-info" href="/scrape">Scrape Data</a>
+        </center>
+        <hr class="my-4">
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <h2 class="display-4 text-primary">Latest Mars News</h2>
+                <h4>{{ mission.news_title }}</h4>
+                <h5 class="text-info">{{ mission.news_date }}</h5>
+                <p>{{ mission.news_p }}</p>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-xl-7">
+                <h2 class="display-4 text-primary">Featured Mars Image</h2>
+                <img src="{{ mission.featured_image_url}}" width="100%">
+
+            </div>
+            <div class="col-md-12 col-xl-4">
+                <div class="card border-primary mb-3">
+                    <div class="card-body">
+                        <h4 class="card-title text-primary">Current Weather on Mars</h4>
+                        <p class="card-text">{{ mission.mars_weather }}</p>
+                    </div>
+                </div>
+
+                <h4 class="display-4 text-primary">Mars Facts</h4>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col"></th>
+                            <th scope="col">Values</th>
+                        </tr>
+                    </thead>
+                    {% set list = mission.mars_facts_table.split("</thead>") %}
+                    {% set list1 = list[1].split("\n") %}
+
+                    {% for item in list1 %}
+                    {{ item|safe }}
+                    {% endfor %}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-12">
+                <center>
+                    <h2 class="display-4 text-primary">Mars Hemispheres</h2>
+                </center>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-xl-6">
+                <div class="card mb-3">
+                    <img style="width: 100%; display: block;"
+                        src="{{ mission.hemisphere_image_urls[0].img_url }}"
+                        alt="Card image">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ mission.hemisphere_image_urls[0].title }}</h5>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="col-md-12 col-xl-6">
+                <div class="card mb-3">
+                    <img style="width: 100%; display: block;"
+                        src="{{ mission.hemisphere_image_urls[1].img_url }}"
+                        alt="Card image">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ mission.hemisphere_image_urls[1].title }}</h5>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="col-md-12 col-xl-6">
+                <div class="card mb-3">
+                    <img style="width: 100%; display: block;"
+                        src="{{ mission.hemisphere_image_urls[2].img_url }}"
+                        alt="Card image">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ mission.hemisphere_image_urls[2].title }}</h5>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="col-md-12 col-xl-6">
+                <div class="card mb-3">
+                    <img style="width: 100%; display: block;"
+                        src="{{ mission.hemisphere_image_urls[3].img_url }}"
+                        alt="Card image">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ mission.hemisphere_image_urls[3].title }}</h5>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <BR /><BR /><BR />
+    <!-- Footer -->
+    <footer class="page-footer font-small text-white bg-primary pt-4">
+        <div class="footer-copyright text-center py-2">© 2020 Copyright: Pharaoh Inc.
+        </div>
+    </footer>
+</body>
+
+</html>
