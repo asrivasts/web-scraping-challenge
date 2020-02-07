@@ -49,10 +49,12 @@ def home():
     # Connect to a database. Will create one if not already available.
     db2 = client2.mission_to_mars
     print("Here")
-    for m in db2.marsDictionary.find():
-        marsMission = m
-    # print(marsMission)
+    marsMission = db2.marsDictionary.find_one()
+    if (marsMission is None):
+        marsMission="Fail"
+    
     return render_template('index.html', mission=marsMission)
+
 
 if __name__ == "__main__":
     app.run(debug=True)
