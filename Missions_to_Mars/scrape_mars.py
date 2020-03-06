@@ -15,8 +15,8 @@ def scrape():
     browser.visit(nasaURL)
     time.sleep(2)
     soupNasa = bs(browser.html, 'html.parser')
-
-    news_title = soupNasa.find('div', class_="content_title").find('a').text.strip()
+    
+    news_title = soupNasa.find('ul', class_='item_list').find('div', class_="content_title").find('a').text.strip()
     news_p = soupNasa.find('div', class_="article_teaser_body").text.strip()
     news_date = soupNasa.find('div', class_="list_date").text.strip()
 
